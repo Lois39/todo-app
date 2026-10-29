@@ -1,18 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     max-width: 600px;
     margin: 40px auto;
     padding: 0 20px;
+    background: #f4f5f7;
+    color: #222;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
 }
 
 input,
+select,
 button {
     padding: 10px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
-#task-list {
-    padding-left: 24px;
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3b6fd8;
+}
+
+button {
+    background: #3b6fd8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2f5bb5;
+}
+
+form button[type="submit"] {
+    margin-top: 12px;
+}
+
+#task-list,
+#expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+}
+
+#task-list li,
+#expense-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#task-list li {
+    cursor: pointer;
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    background: transparent;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+    color: #fff;
 }
 
 .task {
@@ -31,4 +116,18 @@ button {
 #form-error,
 #expense-error {
     color: #eb1e08;
+    font-size: 14px;
+    margin: 4px 0 0;
+    min-height: 1em;
+}
+
+#task-count,
+#expense-total {
+    color: #666;
+    margin-bottom: 0;
+}
+
+#expense-total {
+    font-weight: bold;
+    color: #222;
 }
